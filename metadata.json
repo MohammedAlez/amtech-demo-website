@@ -1,0 +1,6 @@
+{
+  "name": "AMTECH - Algeria's Laptop & Smartphone Destination",
+  "description": "AMTECH Laptop Smartphones & Accessoire - Premium laptop store offering tailored hardware, electronics, and nationwide 58 wilayas delivery in Algeria.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}
