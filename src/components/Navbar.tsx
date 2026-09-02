@@ -107,7 +107,6 @@ export const Navbar: React.FC<NavbarProps> = ({
           <button
             type="button"
             id="nav-cart-button"
-            onClick={onOpenCart}
             className={`relative p-2 sm:p-2.5 transition-colors duration-200 focus:outline-none focus-visible:ring-2 rounded-full group cursor-pointer ${
               isLight
                 ? 'text-neutral-700 hover:text-neutral-900 hover:bg-neutral-100 focus-visible:ring-neutral-400'
@@ -120,17 +119,7 @@ export const Navbar: React.FC<NavbarProps> = ({
               strokeWidth={1.85}
               className="transition-transform group-hover:scale-110"
             />
-            {cartCount > 0 && (
-              <span
-                className={`absolute top-1 right-1 w-4 h-4 rounded-full font-bold text-[10px] flex items-center justify-center ${
-                  isLight
-                    ? 'bg-neutral-900 text-white'
-                    : 'bg-white text-neutral-900'
-                }`}
-              >
-                {cartCount}
-              </span>
-            )}
+            
           </button>
 
           {/* Hamburger Menu Button - ONLY visible on mobile/small screens (hidden on md & up) */}

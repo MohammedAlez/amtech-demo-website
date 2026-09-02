@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { ArrowUpRight, ArrowLeft, ArrowRight, CheckCircle2, ShieldCheck, Truck } from 'lucide-react';
+import { ArrowUpRight, ArrowLeft, ArrowRight } from 'lucide-react';
 import { motion, AnimatePresence } from 'motion/react';
 import amtechStorefrontImage from '../assets/images/amtech_storefront_1788350528974.jpg';
 

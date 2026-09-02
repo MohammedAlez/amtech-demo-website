@@ -249,7 +249,7 @@ export default function App() {
   return (
     <div
       id="app-root"
-      className="min-h-screen bg-[#f7f7f8] text-neutral-900 flex flex-col items-center justify-start p-2 sm:p-4 md:p-6 lg:p-8 font-sans"
+      className="min-h-screen bg-[#f7f7f8] text-neutral-900 flex flex-col items-center justify-start p-2 sm:p-3  font-sans"
     >
       {/* Top Preview Mode Selector & Page View Switcher */}
       
@@ -270,7 +270,7 @@ export default function App() {
             {/* Hero Section Container Card */}
             <div
               id="hero-card-container"
-              className="relative w-full min-h-[580px] sm:min-h-[640px] md:min-h-[680px] lg:min-h-[720px] flex flex-col justify-between rounded-[22px] sm:rounded-[30px] md:rounded-[36px] overflow-hidden bg-[#0d0f12] text-white shadow-2xl border border-white/10"
+              className="relative w-full h-[calc(100dvh-1rem)] sm:h-[calc(100dvh-2rem)] max-h-[900px] min-h-[580px] flex flex-col justify-between rounded-[22px] sm:rounded-[30px] md:rounded-[36px] overflow-hidden bg-[#0d0f12] text-white shadow-2xl border border-white/10"
             >
               {/* Header / Navbar */}
               <Navbar
