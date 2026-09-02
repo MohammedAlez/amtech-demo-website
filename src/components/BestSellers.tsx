@@ -124,7 +124,7 @@ export const BestSellers: React.FC<BestSellersProps> = ({
           {/* View all products link */}
           <button
             id="view-all-products-button"
-            onClick={onViewAllProducts}
+            // onClick={onViewAllProducts}
             className="group flex-shrink-0 flex items-center space-x-1 sm:space-x-1.5 pb-1 border-b border-[#14181c] text-[#14181c] font-medium text-xs sm:text-sm transition-opacity hover:opacity-75 focus:outline-none mb-0.5 whitespace-nowrap"
           >
             <span>Voir tous les produits</span>

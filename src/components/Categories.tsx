@@ -77,7 +77,7 @@ export const Categories: React.FC<CategoriesProps> = ({
           {/* View All Link */}
           <button
             id="categories-view-all"
-            onClick={onViewAll}
+            // onClick={onViewAll}
             className="group flex-shrink-0 flex items-center space-x-1 sm:space-x-1.5 pb-1 border-b border-[#14181c] text-[#14181c] font-medium text-xs sm:text-sm transition-opacity hover:opacity-75 focus:outline-none mb-0.5"
           >
             <span>Voir tout</span>
