@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react';
+import React from 'react';
 import { Search, ShoppingCart, Menu } from 'lucide-react';
 import { Logo } from './Logo';
 
@@ -9,6 +9,9 @@ interface NavbarProps {
   onNavigateHome?: () => void;
   cartCount?: number;
   variant?: 'dark' | 'light';
+
+  fixed?: boolean;
+  show?: boolean;
 }
 
 export const Navbar: React.FC<NavbarProps> = ({
@@ -18,26 +21,12 @@ export const Navbar: React.FC<NavbarProps> = ({
   onNavigateHome,
   cartCount = 0,
   variant = 'dark',
+  fixed = false,
+  show = true,
 }) => {
-  const [isScrolled, setIsScrolled] = useState(false);
+  
 
-  useEffect(() => {
-    const handleScroll = () => {
-      setIsScrolled(window.scrollY > 40);
-    };
-
-    window.addEventListener('scroll', handleScroll, {
-      passive: true,
-    });
-
-    handleScroll();
-
-    return () => {
-      window.removeEventListener('scroll', handleScroll);
-    };
-  }, []);
-
-  const isLight = variant === 'light' || isScrolled;
+  const isLight = variant === 'light' ;
 
   const navLinks = [
     { label: 'Catégories', href: '#categories' },
@@ -48,52 +37,58 @@ export const Navbar: React.FC<NavbarProps> = ({
 
   return (
     <header
-      id="main-header"
-      className={`
-        z-50
-        flex
-        items-center
-        justify-between
-        transition-[background-color,color,box-shadow,padding,border-color]
-duration-200
-ease-out
+  id={fixed ? 'fixed-main-header' : 'main-header'}
+  className={`
+    z-50
+    flex
+    items-center
+    justify-between
+    transition-all
+    duration-200
+    ease-out
 
-        ${
-          isScrolled
-            ? `
-              fixed
-              top-0
-              left-0
-              w-full
-              bg-white/95
-              backdrop-blur-xl
-              border-b
-              border-neutral-200
-              shadow-md
-              py-3
-              sm:py-4
-              px-4
-              sm:px-8
-              md:px-12
-              lg:px-16
-            `
-            : `
-              relative
-              w-full
-              bg-transparent
-              pt-4
-              sm:pt-6
-              md:pt-8
-              pb-3
-              sm:pb-4
-              px-6
-              sm:px-10
-              md:px-14
-              lg:px-16
-            `
-        }
-      `}
-    >
+    ${
+      fixed
+        ? `
+          fixed
+          top-0
+          left-0
+          w-full
+          bg-white/95
+          backdrop-blur-xl
+          border-b
+          border-neutral-200
+          shadow-md
+          py-3
+          sm:py-4
+          px-4
+          sm:px-8
+          md:px-12
+          lg:px-16
+
+          ${
+            show
+              ? 'translate-y-0 opacity-100'
+              : '-translate-y-full opacity-0 pointer-events-none'
+          }
+        `
+        : `
+          relative
+          w-full
+          bg-transparent
+          pt-4
+          sm:pt-6
+          md:pt-8
+          pb-3
+          sm:pb-4
+          px-6
+          sm:px-10
+          md:px-14
+          lg:px-16
+        `
+    }
+  `}
+>
       {/* Logo */}
       <div className="flex items-center">
         <button

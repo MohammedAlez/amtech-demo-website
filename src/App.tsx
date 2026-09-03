@@ -3,7 +3,7 @@
  * SPDX-License-Identifier: Apache-2.0
  */
 
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { Navbar } from './components/Navbar';
 import { Hero } from './components/Hero';
 import { BrandLogos } from './components/BrandLogos';
@@ -194,6 +194,7 @@ function mapLaptopToProductDetails(laptop: any): ProductDetails {
 
 export default function App() {
   const [currentView, setCurrentView] = useState<'home' | 'product'>('home');
+  const [showFixedNavbar, setShowFixedNavbar] = useState(false);
   const [selectedProduct, setSelectedProduct] = useState<ProductDetails>(defaultProductDetails);
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
   const [isSearchOpen, setIsSearchOpen] = useState(false);
@@ -246,13 +247,36 @@ export default function App() {
 
   const totalCartCount = cartItems.reduce((sum, item) => sum + item.qty, 0);
 
+  useEffect(() => {
+  const handleScroll = () => {
+    setShowFixedNavbar(window.scrollY > 100);
+  };
+
+  window.addEventListener('scroll', handleScroll, {
+    passive: true,
+  });
+
+  return () => {
+    window.removeEventListener('scroll', handleScroll);
+  };
+}, []);
+
   return (
     <div
       id="app-root"
       className="min-h-screen bg-[#f7f7f8] text-neutral-900 flex flex-col items-center justify-start p-2 sm:p-3  font-sans"
     >
-      {/* Top Preview Mode Selector & Page View Switcher */}
-      
+      {/* Fixed Navbar */}
+      <Navbar
+        fixed
+        show={showFixedNavbar}
+        variant="light"
+        onOpenMobileMenu={() => setIsMobileMenuOpen(true)}
+        onOpenSearch={() => setIsSearchOpen(true)}
+        onOpenCart={() => setIsCartOpen(true)}
+        onNavigateHome={() => setCurrentView('home')}
+        cartCount={totalCartCount}
+      />
 
       {/* Main Container Wrapper */}
       <div
