@@ -204,13 +204,7 @@ export default function App() {
 
   // Sample initial cart item
   const [cartItems, setCartItems] = useState<CartItem[]>([
-    {
-      id: 'lap-1',
-      name: 'MacBook Pro 16" M3 Max',
-      specs: '36GB RAM, 1TB SSD',
-      price: '485,000 DA',
-      qty: 1,
-    },
+    
   ]);
 
   const handleAddToCart = (laptop: any) => {

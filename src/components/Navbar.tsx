@@ -37,58 +37,58 @@ export const Navbar: React.FC<NavbarProps> = ({
 
   return (
     <header
-  id={fixed ? 'fixed-main-header' : 'main-header'}
-  className={`
-    z-50
-    flex
-    items-center
-    justify-between
-    transition-all
-    duration-200
-    ease-out
-
-    ${
-      fixed
-        ? `
-          fixed
-          top-0
-          left-0
-          w-full
-          bg-white/95
-          backdrop-blur-xl
-          border-b
-          border-neutral-200
-          shadow-md
-          py-3
-          sm:py-4
-          px-4
-          sm:px-8
-          md:px-12
-          lg:px-16
+        id={fixed ? 'fixed-main-header' : 'main-header'}
+        className={`
+          z-50
+          flex
+          items-center
+          justify-between
+          transition-all
+          duration-200
+          ease-out
 
           ${
-            show
-              ? 'translate-y-0 opacity-100'
-              : '-translate-y-full opacity-0 pointer-events-none'
+            fixed
+              ? `
+                fixed
+                top-0
+                left-0
+                w-full
+                bg-white/95
+                backdrop-blur-xl
+                border-b
+                border-neutral-200
+                shadow-md
+                py-3
+                sm:py-4
+                px-4
+                sm:px-8
+                md:px-12
+                lg:px-16
+
+                ${
+                  show
+                    ? 'translate-y-0 opacity-100'
+                    : '-translate-y-full opacity-0 pointer-events-none'
+                }
+              `
+              : `
+                relative
+                w-full
+                bg-transparent
+                pt-4
+                sm:pt-6
+                md:pt-8
+                pb-3
+                sm:pb-4
+                px-6
+                sm:px-10
+                md:px-14
+                lg:px-16
+              `
           }
-        `
-        : `
-          relative
-          w-full
-          bg-transparent
-          pt-4
-          sm:pt-6
-          md:pt-8
-          pb-3
-          sm:pb-4
-          px-6
-          sm:px-10
-          md:px-14
-          lg:px-16
-        `
-    }
-  `}
->
+        `}
+      >
       {/* Logo */}
       <div className="flex items-center">
         <button
@@ -175,7 +175,7 @@ export const Navbar: React.FC<NavbarProps> = ({
           <button
             type="button"
             id="nav-search-button"
-            onClick={onOpenSearch}
+            // onClick={onOpenSearch}
             className={`
               p-2
               sm:p-2.5

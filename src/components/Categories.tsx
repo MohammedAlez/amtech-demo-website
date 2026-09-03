@@ -83,7 +83,7 @@ export const Categories: React.FC<CategoriesProps> = ({
           {/* View All Link */}
           <button
             id="categories-view-all"
-            onClick={onViewAll}
+            // onClick={onViewAll}
             className="group flex-shrink-0 flex items-center space-x-1 sm:space-x-1.5 pb-1 border-b border-[#14181c] text-[#14181c] font-medium text-xs sm:text-sm transition-opacity hover:opacity-75 focus:outline-none mb-0.5"
           >
             <span>Voir tout</span>
@@ -105,7 +105,7 @@ export const Categories: React.FC<CategoriesProps> = ({
             <div
               key={cat.id}
               id={`category-card-${cat.id}`}
-              onClick={() => onSelectCategory?.(cat)}
+              // onClick={() => onSelectCategory?.(cat)}
               className="group relative aspect-[3/4] sm:aspect-[4/5] rounded-[16px] sm:rounded-[22px] md:rounded-[24px] overflow-hidden bg-neutral-900 shadow-sm cursor-pointer transition-all duration-300 hover:shadow-xl hover:-translate-y-1"
             >
               {/* Category Background Image */}
