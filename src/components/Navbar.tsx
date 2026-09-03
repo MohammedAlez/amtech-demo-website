@@ -88,7 +88,7 @@ export const Navbar: React.FC<NavbarProps> = ({
           <button
             type="button"
             id="nav-search-button"
-            onClick={onOpenSearch}
+            // onClick={onOpenSearch}
             className={`p-2 sm:p-2.5 transition-colors duration-200 focus:outline-none focus-visible:ring-2 rounded-full group cursor-pointer ${
               isLight
                 ? 'text-neutral-700 hover:text-neutral-900 hover:bg-neutral-100 focus-visible:ring-neutral-400'
