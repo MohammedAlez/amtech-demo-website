@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { ArrowUpRight, ArrowLeft, ArrowRight } from 'lucide-react';
 import { motion, AnimatePresence } from 'motion/react';
 import amtechStorefrontImage from '../assets/images/amtech_storefront_1788350528974.jpg';
@@ -22,7 +22,7 @@ const slides = [
     eyebrow: 'MATÉRIEL CERTIFIÉ & OFFICIEL',
     titleLine1: 'Conçu pour des',
     titleLine2: 'performances optimales.',
-    tagline: 'Garantie officielle de 2 ans',
+    tagline: 'Garantie officielle de 1 an',
     cta: 'Explorer les modèles',
     image: amtechStorefrontImage,
   },
@@ -31,7 +31,7 @@ const slides = [
     eyebrow: 'SÉLECTION HAUT DE GAMME',
     titleLine1: 'Adapté à votre',
     titleLine2: 'rythme de travail.',
-    tagline: 'Livraison express 48h dans 58 Wilayas',
+    tagline: 'Livraison express 48h dans 69 Wilayas',
     cta: 'Consulter le catalogue',
     image: amtechStorefrontImage,
   },
@@ -48,6 +48,15 @@ export const Hero: React.FC<HeroProps> = ({ onShopClick }) => {
   const handlePrevSlide = () => {
     setCurrentSlideIndex((prev) => (prev - 1 + slides.length) % slides.length);
   };
+
+  // Auto-advance slides every 3 seconds
+  useEffect(() => {
+    const timer = setInterval(() => {
+      handleNextSlide();
+    }, 3000);
+
+    return () => clearInterval(timer);
+  }, [currentSlideIndex]);
 
   return (
     <section

@@ -64,7 +64,7 @@ export const Navbar: React.FC<NavbarProps> = ({
                 px-4
                 sm:px-8
                 md:px-12
-                lg:px-16
+                lg:px-60
 
                 ${
                   show
@@ -94,12 +94,12 @@ export const Navbar: React.FC<NavbarProps> = ({
         <button
           onClick={onNavigateHome}
           id="brand-logo-link"
-          className="focus:outline-none focus-visible:ring-2 focus-visible:ring-neutral-400 rounded-full"
+          className=""
           aria-label="AMTECH Accueil"
         >
           <Logo
             size={42}
-            className="sm:w-[48px] sm:h-[48px]"
+            className=""
           />
         </button>
       </div>
