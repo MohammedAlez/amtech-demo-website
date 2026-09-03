@@ -270,7 +270,7 @@ export default function App() {
             {/* Hero Section Container Card */}
             <div
               id="hero-card-container"
-              className="relative w-full h-[calc(100dvh-1rem)] sm:h-[calc(100dvh-2rem)] max-h-[900px] min-h-[580px] flex flex-col justify-between rounded-[22px] sm:rounded-[30px] md:rounded-[36px] overflow-visible bg-[#0d0f12] text-white shadow-2xl border border-white/10"
+              className="relative transition w-full h-[calc(100dvh-1rem)] sm:h-[calc(100dvh-2rem)] max-h-[900px] min-h-[580px] flex flex-col justify-between rounded-[22px] sm:rounded-[30px] md:rounded-[36px] overflow-hidden bg-[#0d0f12] text-white shadow-2xl border border-white/10"
             >
               {/* Header / Navbar */}
               <Navbar

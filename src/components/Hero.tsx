@@ -55,7 +55,7 @@ export const Hero: React.FC<HeroProps> = ({ onShopClick }) => {
       className="relative w-full flex-1 min-h-0 flex flex-col justify-between px-6 sm:px-10 md:px-14 lg:px-16 pb-5 sm:pb-8 md:pb-10 pt-2 sm:pt-4 z-10"
     >
       {/* Background Image Container with Gradient Overlays */}
-      <div className="absolute inset-0 -z-10 overflow-hidden select-none pointer-events-none">
+      <div className="absolute transition-all inset-0 -z-10 overflow-hidden select-none pointer-events-none">
         {/* AMTECH Storefront / Desk Laptop Photography */}
         <AnimatePresence mode="wait">
           <motion.img
@@ -66,7 +66,7 @@ export const Hero: React.FC<HeroProps> = ({ onShopClick }) => {
             animate={{ opacity: 1, scale: 1 }}
             exit={{ opacity: 0.4 }}
             transition={{ duration: 0.5 }}
-            className="w-full h-full object-cover object-[70%_center] sm:object-[60%_center] md:object-[55%_center] lg:object-center brightness-105 contrast-100"
+            className="w-full h-full transition object-cover object-[70%_center] sm:object-[60%_center] md:object-[55%_center] lg:object-center brightness-105 contrast-100"
           />
         </AnimatePresence>
 

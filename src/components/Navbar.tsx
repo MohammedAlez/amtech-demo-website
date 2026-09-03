@@ -23,7 +23,7 @@ export const Navbar: React.FC<NavbarProps> = ({
 
   useEffect(() => {
     const handleScroll = () => {
-      setIsScrolled(window.scrollY > 80);
+      setIsScrolled(window.scrollY > 40);
     };
 
     window.addEventListener('scroll', handleScroll, {
@@ -54,9 +54,9 @@ export const Navbar: React.FC<NavbarProps> = ({
         flex
         items-center
         justify-between
-        transition-all
-        duration-500
-        ease-in-out
+        transition-[background-color,color,box-shadow,padding,border-color]
+duration-200
+ease-out
 
         ${
           isScrolled
@@ -124,7 +124,7 @@ export const Navbar: React.FC<NavbarProps> = ({
             font-normal
             tracking-wide
             transition-colors
-            duration-500
+            duration-200
             ${
               isLight
                 ? 'text-neutral-600'
